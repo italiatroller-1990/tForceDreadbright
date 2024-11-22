@@ -1,8 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://dsx1k1muf3ufa"]
+[gd_scene load_steps=8 format=3 uid="uid://dsx1k1muf3ufa"]
 
 [ext_resource type="Script" path="res://gameui_scenes/main_menu.gd" id="1_thd5p"]
-[ext_resource type="Material" uid="uid://cj7dct4a8ahh6" path="res://addons/qodot/textures/floor/floor_1.tres" id="2_p74fw"]
-[ext_resource type="PackedScene" uid="uid://cr6dgig40pbvd" path="res://models/nailgun.blend" id="3_p74fw"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_p74fw"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -24,14 +22,9 @@ font_color = Color(0.574097, 0.686465, 0.668237, 1)
 [sub_resource type="LabelSettings" id="LabelSettings_d2ssp"]
 font_size = 36
 
-[sub_resource type="BoxMesh" id="BoxMesh_p74fw"]
-
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ouqqh"]
 bounce = 0.15
 absorbent = true
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_mxxoo"]
-size = Vector3(1.2, 0.5, 1)
 
 [node name="mainmenu" type="Control"]
 layout_mode = 3
@@ -95,24 +88,11 @@ grow_vertical = 0
 text = "Italia Troller, 2024"
 label_settings = SubResource("LabelSettings_d2ssp")
 
-[node name="CSGMesh3D" type="CSGMesh3D" parent="."]
-transform = Transform3D(23.0254, 0, 0, 0, 3.12072, 0, 0, 0, 16.1715, 0, 0, 0)
-use_collision = true
-mesh = SubResource("BoxMesh_p74fw")
-material = ExtResource("2_p74fw")
-
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9, 3.84, 0)
 physics_material_override = SubResource("PhysicsMaterial_ouqqh")
 linear_damp_mode = 1
 linear_damp = 0.105
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, 0.15, 0)
-shape = SubResource("BoxShape3D_mxxoo")
-
-[node name="nailgun" parent="RigidBody3D" instance=ExtResource("3_p74fw")]
-transform = Transform3D(0.17, 0, 0, 0, 0.17, 0, 0, 0, 0.17, 0, 0, 0)
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7, 1.7, 2.2)
