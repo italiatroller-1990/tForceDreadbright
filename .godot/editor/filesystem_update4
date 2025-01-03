@@ -1,0 +1,9 @@
+res://gameui_scenes/main_menu.tscn
+res://new_standard_material_3d.tres
+res://viewmodel-shaders/shader.gdshader
+res://player/player.tscn
+res://test.tscn
+res://models/tscn-models/mace.tscn
+res://models/tscn-models/pistol.tscn
+res://gameui_scenes/intro.tscn
+res://gameui_scenes/intro.gd
