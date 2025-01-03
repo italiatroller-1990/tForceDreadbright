@@ -1,0 +1,69 @@
+[gd_scene load_steps=7 format=3 uid="uid://ckokxw3jrkshp"]
+
+[ext_resource type="ArrayMesh" uid="uid://du48ydbvw4h1f" path="res://models/mace.obj" id="1_w4s5t"]
+[ext_resource type="Shader" path="res://viewmodel-shaders/shader.gdshader" id="2_ktv2i"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bwh36"]
+render_priority = 0
+shader = ExtResource("2_ktv2i")
+shader_parameter/viewmodel_fov = 90.0
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/specular = 0.5
+shader_parameter/metallic = 1.0
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/roughness_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/normal_scale = 0.5
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xx5f5"]
+render_priority = 0
+shader = ExtResource("2_ktv2i")
+shader_parameter/viewmodel_fov = 90.0
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/specular = 0.5
+shader_parameter/metallic = 1.0
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/roughness_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/normal_scale = 0.5
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_amibj"]
+render_priority = 0
+shader = ExtResource("2_ktv2i")
+shader_parameter/viewmodel_fov = 90.0
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/specular = 0.5
+shader_parameter/metallic = 1.0
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/roughness_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/normal_scale = 0.5
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y5bbr"]
+render_priority = 0
+shader = ExtResource("2_ktv2i")
+shader_parameter/viewmodel_fov = 90.0
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/specular = 0.5
+shader_parameter/metallic = 1.0
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/roughness_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/normal_scale = 0.5
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+
+[node name="Mace" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_w4s5t")
+surface_material_override/0 = SubResource("ShaderMaterial_bwh36")
+surface_material_override/1 = SubResource("ShaderMaterial_xx5f5")
+surface_material_override/2 = SubResource("ShaderMaterial_amibj")
+surface_material_override/3 = SubResource("ShaderMaterial_y5bbr")

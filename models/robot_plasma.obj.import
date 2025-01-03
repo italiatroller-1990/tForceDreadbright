@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dccy734erj4me"
+path="res://.godot/imported/robot_plasma.obj-cc1e59bb239d331c8d98e0e418293aaa.mesh"
+
+[deps]
+
+files=["res://.godot/imported/robot_plasma.obj-cc1e59bb239d331c8d98e0e418293aaa.mesh"]
+
+source_file="res://models/robot_plasma.obj"
+dest_files=["res://.godot/imported/robot_plasma.obj-cc1e59bb239d331c8d98e0e418293aaa.mesh", "res://.godot/imported/robot_plasma.obj-cc1e59bb239d331c8d98e0e418293aaa.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

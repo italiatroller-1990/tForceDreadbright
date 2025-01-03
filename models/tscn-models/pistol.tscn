@@ -1,0 +1,84 @@
+[gd_scene load_steps=8 format=3 uid="uid://dwl268qcyuwb4"]
+
+[ext_resource type="ArrayMesh" uid="uid://bvqp1p2fci2ri" path="res://models/pistol2.obj" id="1_unnt3"]
+[ext_resource type="Shader" path="res://viewmodel-shaders/shader.gdshader" id="2_rb556"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ac5xk"]
+render_priority = 0
+shader = ExtResource("2_rb556")
+shader_parameter/viewmodel_fov = 90.0
+shader_parameter/albedo = Color(0.724643, 0.724643, 0.724642, 1)
+shader_parameter/specular = 1.32
+shader_parameter/metallic = 0.945
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/roughness_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/normal_scale = 0.5
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_radj2"]
+render_priority = 0
+shader = ExtResource("2_rb556")
+shader_parameter/viewmodel_fov = 90.0
+shader_parameter/albedo = Color(0.479688, 0.480448, 0.496548, 1)
+shader_parameter/specular = -0.62
+shader_parameter/metallic = 0.785
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/roughness_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/normal_scale = 0.5
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5bv4u"]
+render_priority = 0
+shader = ExtResource("2_rb556")
+shader_parameter/viewmodel_fov = 90.0
+shader_parameter/albedo = Color(0.281187, 0.281187, 0.281187, 1)
+shader_parameter/specular = 0.5
+shader_parameter/metallic = 1.0
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/roughness_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/normal_scale = 0.5
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2c7ol"]
+render_priority = 0
+shader = ExtResource("2_rb556")
+shader_parameter/viewmodel_fov = 90.0
+shader_parameter/albedo = Color(0.497474, 0.497474, 0.497474, 1)
+shader_parameter/specular = 0.5
+shader_parameter/metallic = 1.0
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/roughness_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/normal_scale = 0.5
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_44fv2"]
+render_priority = 0
+shader = ExtResource("2_rb556")
+shader_parameter/viewmodel_fov = 90.0
+shader_parameter/albedo = Color(0.458405, 0.458405, 0.458405, 1)
+shader_parameter/specular = 0.5
+shader_parameter/metallic = 1.0
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/roughness_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/normal_scale = 0.5
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+
+[node name="pistol" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_unnt3")
+surface_material_override/0 = SubResource("ShaderMaterial_ac5xk")
+surface_material_override/1 = SubResource("ShaderMaterial_radj2")
+surface_material_override/2 = SubResource("ShaderMaterial_5bv4u")
+surface_material_override/3 = SubResource("ShaderMaterial_2c7ol")
+surface_material_override/4 = SubResource("ShaderMaterial_44fv2")

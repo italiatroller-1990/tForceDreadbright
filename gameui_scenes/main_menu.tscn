@@ -1,10 +1,25 @@
-[gd_scene load_steps=8 format=3 uid="uid://dsx1k1muf3ufa"]
+[gd_scene load_steps=11 format=3 uid="uid://dsx1k1muf3ufa"]
 
-[ext_resource type="Script" path="res://gameui_scenes/main_menu.gd" id="1_thd5p"]
+[ext_resource type="Script" uid="uid://c0m2v25n1ow0b" path="res://gameui_scenes/main_menu.gd" id="1_thd5p"]
+[ext_resource type="AudioStream" uid="uid://7fdliknq5c1d" path="res://music/main_menu.ogg" id="2_4kuf2"]
+[ext_resource type="Texture2D" uid="uid://c8tjhs1i5imec" path="res://intro.png" id="3_s8iif"]
+[ext_resource type="Script" path="res://gameui_scenes/intro.gd" id="4_x08qv"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_bymqf"]
+font_size = 61
+font_color = Color(0.574097, 0.686465, 0.668237, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_d2ssp"]
+font_size = 36
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_p74fw"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+sky_curve = 0.197926
+sky_energy_multiplier = 1.55
 ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_curve = 0.0951362
+ground_energy_multiplier = 1.85
+sun_angle_max = 34.6
 
 [sub_resource type="Sky" id="Sky_ouqqh"]
 sky_material = SubResource("ProceduralSkyMaterial_p74fw")
@@ -14,13 +29,6 @@ background_mode = 2
 sky = SubResource("Sky_ouqqh")
 tonemap_mode = 2
 glow_enabled = true
-
-[sub_resource type="LabelSettings" id="LabelSettings_bymqf"]
-font_size = 61
-font_color = Color(0.574097, 0.686465, 0.668237, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_d2ssp"]
-font_size = 36
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ouqqh"]
 bounce = 0.15
@@ -35,58 +43,69 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_thd5p")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_mxxoo")
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
-shadow_enabled = true
-
-[node name="vbox" type="VBoxContainer" parent="."]
+[node name="vbox" type="VBoxContainer" parent="Panel"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = -279.5
+offset_top = -94.5
+offset_right = 279.5
+offset_bottom = 94.5
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_use_anchors_ = true
 
-[node name="gametitle" type="Label" parent="vbox"]
+[node name="gametitle" type="Label" parent="Panel/vbox"]
 layout_mode = 2
 size_flags_vertical = 6
 text = "tForce Dreadbright"
 label_settings = SubResource("LabelSettings_bymqf")
 
-[node name="start" type="Button" parent="vbox"]
+[node name="start" type="Button" parent="Panel/vbox"]
 layout_mode = 2
 text = "Start"
 
-[node name="config" type="Button" parent="vbox"]
+[node name="config" type="Button" parent="Panel/vbox"]
 layout_mode = 2
 text = "Configuration"
 
-[node name="quit" type="Button" parent="vbox"]
+[node name="quit" type="Button" parent="Panel/vbox"]
 layout_mode = 2
 text = "Quit"
 
-[node name="gameauthor" type="Label" parent="."]
+[node name="gameauthor" type="Label" parent="Panel"]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -139.0
-offset_top = -23.0
+offset_left = -312.0
+offset_top = -50.0
 grow_horizontal = 0
 grow_vertical = 0
 text = "Italia Troller, 2024"
 label_settings = SubResource("LabelSettings_d2ssp")
+metadata/_edit_use_anchors_ = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_mxxoo")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
 
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9, 3.84, 0)
@@ -97,6 +116,21 @@ linear_damp = 0.105
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7, 1.7, 2.2)
 
-[connection signal="mouse_entered" from="vbox/start" to="." method="_on_anybutton_mouse_entered"]
-[connection signal="mouse_entered" from="vbox/config" to="." method="_on_anybutton_mouse_entered"]
-[connection signal="mouse_entered" from="vbox/quit" to="." method="_on_anybutton_mouse_entered"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_4kuf2")
+autoplay = true
+parameters/looping = true
+
+[node name="intro" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_s8iif")
+script = ExtResource("4_x08qv")
+
+[connection signal="mouse_entered" from="Panel/vbox/start" to="." method="_on_anybutton_mouse_entered"]
+[connection signal="mouse_entered" from="Panel/vbox/config" to="." method="_on_anybutton_mouse_entered"]
+[connection signal="mouse_entered" from="Panel/vbox/quit" to="." method="_on_anybutton_mouse_entered"]
